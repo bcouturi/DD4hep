@@ -69,7 +69,7 @@ if ( ${DD4HEP_USE_GEANT4} )
   set(Geant4_DIR ${Geant4_DIR} )
 endif()
 
-CHECK_PACKAGE_LIBS(DD4hep DDCore)
+CHECK_PACKAGE_LIBS(DD4hep DDCore DDCond DDAlign)
 
 IF(DD4hep_FIND_COMPONENTS)
   dd4hep_print( "|++> DD4hep: Looking for Components: ${DD4hep_FIND_COMPONENTS}" )
