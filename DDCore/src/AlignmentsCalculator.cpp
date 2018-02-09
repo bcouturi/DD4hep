@@ -89,6 +89,7 @@ namespace dd4hep {
         }
         void insert(DetElement det, const Delta* delta)   {
           if ( det.isValid() )  {
+            std::cout << "Inserting " << det.path() << std::endl;
             Entry entry(det,delta);
             detectors.insert(std::make_pair(det, entries.size()));
             keys.insert(std::make_pair(entry.key, entries.size()));
@@ -127,7 +128,6 @@ Result Calculator::compute(Context& context, Entry& e)   const  {
   e.cond  = cond.ptr();
   align.delta         = *delta;
   delta->computeMatrix(transform_for_delta);
-
   DetElement parent_det = det.parent();
   AlignmentCondition parent_cond = context.mapping.get(parent_det, Keys::alignmentKey);
   TGeoHMatrix parent_transform;
