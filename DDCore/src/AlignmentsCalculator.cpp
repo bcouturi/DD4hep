@@ -89,7 +89,6 @@ namespace dd4hep {
         }
         void insert(DetElement det, const Delta* delta)   {
           if ( det.isValid() )  {
-            std::cout << "Inserting " << det.path() << std::endl;
             Entry entry(det,delta);
             detectors.insert(std::make_pair(det, entries.size()));
             keys.insert(std::make_pair(entry.key, entries.size()));
@@ -105,7 +104,6 @@ namespace dd4hep {
 
 //static PrintLevel s_PRINT = DEBUG;
 static PrintLevel s_PRINT = INFO;
-
 
 /// Compute all alignment conditions of the lower levels
 Result Calculator::compute(Context& context, Entry& e)   const  {
